@@ -10,9 +10,9 @@ class Foo
 
   def send_messge
     message(
-      'Some',
-      'Random',
-      'Message'
+    'Some',
+    'Random',
+    'Message'
     )
   end
 
