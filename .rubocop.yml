@@ -1,2 +1,120 @@
+require:
+  - rubocop-rails
+  - rubocop-rspec
+  # - rubocop-capybara
+ 
+AllCops:
+  NewCops: enable
+  Exclude:
+    - db/schema.rb
+    - node_modules/**/*
+ 
+Capybara/RSpec/HaveSelector:
+  Enabled: false
+ 
+Layout/CaseIndentation:
+  EnforcedStyle: end
+ 
+Layout/DotPosition:
+  EnforcedStyle: trailing
+ 
+Layout/FirstHashElementIndentation:
+  EnforcedStyle: consistent
+ 
+Layout/FirstArrayElementIndentation:
+  EnforcedStyle: consistent
+ 
+Layout/LineLength:
+  Enabled: false
+ 
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+ 
+Lint/MissingSuper:
+  Exclude:
+    - app/queries/**/*
+ 
+Metrics/AbcSize:
+  Exclude:
+    - db/migrate/*.rb
+    - spec/**/*.rb
+ 
+Metrics/BlockLength:
+  Exclude:
+    - config/environments/*.rb
+    - config/routes.rb
+    - db/migrate/*.rb
+    - spec/**/*.rb
+ 
+Metrics/ClassLength:
+  CountComments: false
+  Max: 250
+  Exclude:
+    - db/migrate/*.rb
+    - spec/**/*.rb
+ 
+Metrics/CyclomaticComplexity:
+  Exclude:
+    - db/migrate/*.rb
+    - spec/**/*.rb
+ 
+Metrics/MethodLength:
+  CountComments: false
+  Max: 30
+  Exclude:
+    - db/migrate/*.rb
+    - spec/**/*.rb
+ 
+Metrics/ModuleLength:
+  CountComments: false
+  Max: 250
+  Exclude:
+    - spec/**/*.rb
+ 
+Metrics/PerceivedComplexity:
+  Exclude:
+    - spec/**/*.rb
+ 
+Rails/ApplicationController:
+  Exclude:
+    - app/controllers/application_webhook_controller.rb
+ 
+Rails/UnknownEnv:
+  Environments:
+    - development
+    - production
+    - review
+    - staging
+    - test
+ 
+RSpec/ExampleLength:
+  Exclude:
+    - spec/features/**/*.rb
+ 
+RSpec/NamedSubject:
+  Enabled: false
+ 
+RSpec/SubjectDeclaration:
+  Enabled: false
+ 
+Style/Documentation:
+  Enabled: false
+ 
+Style/FormatStringToken:
+  EnforcedStyle: template
+ 
 Style/FrozenStringLiteralComment:
   Enabled: false
+ 
+Style/PercentLiteralDelimiters:
+  # Specify the default preferred delimiter for all types with the 'default' key
+  # Override individual delimiters (even with default specified) by specifying
+  # an individual key
+  PreferredDelimiters:
+    default: ()
+    '%i': '[]'
+    '%I': '[]'
+    '%r': '{}'
+    '%w': '[]'
+    '%W': '[]'
+
